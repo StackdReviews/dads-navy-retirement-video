@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Honoring Michael Cook</title>
+<meta name="description" content="A retirement tribute celebrating 38 years of service in the United States Army and United States Navy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1a33;
+    --navy-deep: #060f21;
+    --gold: #c9a227;
+    --gold-soft: #e3c466;
+    --ink: #f3efe4;
+    --muted: #a9b2c3;
+    --panel: #10234a;
+    --line: rgba(201, 162, 39, .45);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: radial-gradient(1200px 600px at 50% -10%, #16305c 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color: var(--ink);
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { text-align: center; padding: 24px 0 20px; }
+  .kicker {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic; color: var(--gold-soft); font-size: 1.35rem; letter-spacing: .02em; margin: 0;
+  }
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.2rem); margin: 6px 0 10px; line-height: 1.05;
+  }
+  .rule { width: 120px; height: 2px; margin: 14px auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .branches { color: var(--muted); font-size: 1.05rem; margin: 0; letter-spacing: .08em; text-transform: uppercase; }
+  .player {
+    position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000;
+    border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,.45);
+  }
+  video { width: 100%; height: 100%; display: block; background: #000; }
+  .chapters { margin-top: 28px; }
+  .chapters h2 {
+    font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 1.6rem;
+    color: var(--gold-soft); margin: 0 0 10px; text-align: center;
+  }
+  .chapters p.hint { text-align: center; color: var(--muted); margin: 0 0 18px; font-size: .95rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .card { background: rgba(16, 35, 74, .65); border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 14px 16px; }
+  .card h3 { margin: 0 0 8px; font-size: 1.05rem; font-weight: 600; }
+  .card h3 button { font-size: inherit; }
+  button.jump {
+    all: unset; cursor: pointer; color: var(--ink); display: block; width: 100%; padding: 6px 4px; border-radius: 6px;
+    font-size: .98rem;
+  }
+  button.jump:hover, button.jump:focus-visible { background: rgba(201,162,39,.14); color: #fff; outline: none; }
+  button.jump time { color: var(--gold-soft); font-variant-numeric: tabular-nums; margin-right: 10px; font-size: .9em; }
+  .people { margin: 0; padding: 0; list-style: none; }
+  .dates { margin: 34px auto 0; max-width: 640px; text-align: center; color: var(--muted); line-height: 1.7; }
+  .dates b { color: var(--ink); font-weight: 600; }
+  footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+  .notice { color: var(--muted); text-align: center; margin: 10px 0 0; font-size: .9rem; }
+  @media (max-width: 480px) { .wrap { padding-top: 16px; } header { padding-top: 8px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Honoring the Service of</p>
+    <h1 id="honoree">Michael Cook</h1>
+    <div class="rule"></div>
+    <p class="branches">United States Army &nbsp;&middot;&nbsp; United States Navy &nbsp;&middot;&nbsp; 1988 &ndash; 2026</p>
+  </header>
+
+  <div class="player">
+    <video id="video" controls playsinline preload="metadata" poster="poster.jpg"></video>
+  </div>
+  <p class="notice" id="notice"></p>
+
+  <section class="chapters" id="chapters" hidden>
+    <h2>Jump to a Moment</h2>
+    <p class="hint">Choose a chapter or a name to skip straight to it.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="dates">
+    <div><b>Enlisted, United States Army</b> &middot; March 2, 1988</div>
+    <div><b>Commissioned, United States Navy</b> &middot; April 9, 2005</div>
+    <div><b>Retired, United States Navy</b> &middot; March 13, 2026</div>
+  </section>
+
+  <footer>
+    Thank you for your service.<br>
+    Music performed by the United States Army Band and the United States Navy Band.
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.17/hls.min.js"></script>
+<script>
+(function () {
+  var video = document.getElementById('video');
+  var src = 'hls/index.m3u8';
+  var notice = document.getElementById('notice');
+
+  if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = src;
+  } else if (window.Hls && Hls.isSupported()) {
+    var hls = new Hls({ maxBufferLength: 60 });
+    hls.loadSource(src);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.ERROR, function (_, data) {
+      if (data.fatal) notice.textContent = 'The video could not be loaded. Please refresh the page to try again.';
+    });
+  } else {
+    notice.textContent = 'This browser cannot play the video. Please try Chrome, Safari, Edge or Firefox.';
+  }
+
+  function fmt(s) {
+    s = Math.max(0, Math.round(s));
+    var m = Math.floor(s / 60), r = s % 60;
+    return m + ':' + (r < 10 ? '0' : '') + r;
+  }
+  function jumpButton(label, start) {
+    var b = document.createElement('button');
+    b.className = 'jump';
+    b.type = 'button';
+    var t = document.createElement('time');
+    t.textContent = fmt(start);
+    b.appendChild(t);
+    b.appendChild(document.createTextNode(label));
+    b.addEventListener('click', function () {
+      video.currentTime = start;
+      video.play();
+      video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    return b;
+  }
+
+  fetch('chapters.json').then(function (r) { return r.json(); }).then(function (data) {
+    if (data.honoree) document.getElementById('honoree').textContent = data.honoree;
+    var grid = document.getElementById('grid');
+    data.chapters.forEach(function (ch) {
+      var card = document.createElement('div');
+      card.className = 'card';
+      var h = document.createElement('h3');
+      h.appendChild(jumpButton(ch.title, ch.start));
+      card.appendChild(h);
+      if (ch.people && ch.people.length) {
+        var ul = document.createElement('ul');
+        ul.className = 'people';
+        ch.people.forEach(function (p) {
+          var li = document.createElement('li');
+          li.appendChild(jumpButton(p.name, p.start));
+          ul.appendChild(li);
+        });
+        card.appendChild(ul);
+      }
+      grid.appendChild(card);
+    });
+    document.getElementById('chapters').hidden = false;
+  }).catch(function () {});
+})();
+</script>
+</body>
+</html>
