@@ -167,7 +167,7 @@ async function photoClip(entry, idx, seconds) {
 }
 
 // ---------- slideshow (photos + cards, crossfaded, with music bed) ----------
-async function buildSlideshow(items, musicFiles) {
+async function buildSlideshow(items, musicFiles, musicTrims) {
   const out = path.join(CLIPS, 'slideshow.mp4');
   const n = items.length;
   const args = [];
@@ -191,7 +191,11 @@ async function buildSlideshow(items, musicFiles) {
   // music bed: normalise each track, crossfade them, trim to slideshow length, fade out
   const mi = musicFiles.map((_, i) => n + i);
   for (const [i, idx] of mi.entries()) {
-    f += `[${idx}:a]loudnorm=I=-18:TP=-1.5:LRA=11,aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo[m${i}];`;
+    const t = musicTrims[i] || {};
+    const trim = (t.start != null || t.end != null)
+      ? `atrim=${t.start != null ? 'start=' + t.start : ''}${t.start != null && t.end != null ? ':' : ''}${t.end != null ? 'end=' + t.end : ''},asetpts=PTS-STARTPTS,`
+      : '';
+    f += `[${idx}:a]${trim}loudnorm=I=-18:TP=-1.5:LRA=11,aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo[m${i}];`;
   }
   let a = '[m0]';
   for (let i = 1; i < mi.length; i++) {
@@ -259,9 +263,14 @@ async function buildClosing() {
   const t0 = Date.now();
 
   // 1. music length decides how long each photo is on screen
+  // slideshowMusic entries are either "path" or { file, start, end } (start/end in seconds, trims the track)
+  const music = M.slideshowMusic.map(m => (typeof m === 'string' ? { file: m } : m));
   let musicLen = 0;
-  for (const m of M.slideshowMusic) musicLen += await probeDuration(path.join(ROOT, m));
-  musicLen -= 3 * (M.slideshowMusic.length - 1);
+  for (const m of music) {
+    const full = await probeDuration(path.join(ROOT, m.file));
+    musicLen += Math.min(m.end != null ? m.end : full, full) - (m.start || 0);
+  }
+  musicLen -= 3 * (music.length - 1);
   const nPhotos = M.photoSections.reduce((s, sec) => s + sec.photos.length, 0);
   const nCards = 1 + M.photoSections.length;
   const fixed = M.title.seconds + M.photoSections.length * CARD_SEC;
@@ -303,7 +312,7 @@ async function buildClosing() {
     for (let i = 0; i < sec.photos.length; i++) slideItems.push(photoClips[cursor++]);
   }
   log('building slideshow with music');
-  const slideshow = await buildSlideshow(slideItems, M.slideshowMusic.map(m => path.join(ROOT, m)));
+  const slideshow = await buildSlideshow(slideItems, music.map(m => path.join(ROOT, m.file)), music);
   log(`slideshow ${slideshow.seconds.toFixed(1)}s`);
 
   // 3. message videos

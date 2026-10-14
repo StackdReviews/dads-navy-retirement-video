@@ -3,7 +3,6 @@
   "photosDir": "Pictures Organized",
   "videosDir": ".",
   "familyVideosDir": "Family Videos",
-
   "honoree": "Michael Cook",
   "title": {
     "kicker": "Honoring the Service of",
@@ -12,50 +11,104 @@
     "line2": "1988 – 2026",
     "seconds": 8
   },
-
   "closing": [
     {
       "seconds": 22,
       "lines": [
-        { "text": "Thank You for Your Service", "font": "georgiab.ttf", "size": 92, "color": "white", "y": 250 },
-        { "text": "Michael Cook", "font": "georgia.ttf", "size": 62, "color": "gold", "y": 380 },
-        { "text": "Enlisted, United States Army  ·  March 2, 1988", "font": "georgia.ttf", "size": 44, "color": "white", "y": 540 },
-        { "text": "Commissioned, United States Navy  ·  April 9, 2005", "font": "georgia.ttf", "size": 44, "color": "white", "y": 610 },
-        { "text": "Retired, United States Navy  ·  March 13, 2026", "font": "georgia.ttf", "size": 44, "color": "white", "y": 680 },
-        { "text": "Thirty-Eight Years of Service", "font": "georgiai.ttf", "size": 48, "color": "gold", "y": 800 }
+        {
+          "text": "Thank You for Your Service",
+          "font": "georgiab.ttf",
+          "size": 92,
+          "color": "white",
+          "y": 250
+        },
+        {
+          "text": "Michael Cook",
+          "font": "georgia.ttf",
+          "size": 62,
+          "color": "gold",
+          "y": 380
+        },
+        {
+          "text": "Enlisted, United States Army  ·  March 2, 1988",
+          "font": "georgia.ttf",
+          "size": 44,
+          "color": "white",
+          "y": 540
+        },
+        {
+          "text": "Commissioned, United States Navy  ·  April 9, 2005",
+          "font": "georgia.ttf",
+          "size": 44,
+          "color": "white",
+          "y": 610
+        },
+        {
+          "text": "Retired, United States Navy  ·  March 13, 2026",
+          "font": "georgia.ttf",
+          "size": 44,
+          "color": "white",
+          "y": 680
+        },
+        {
+          "text": "Thirty-Eight Years of Service",
+          "font": "georgiai.ttf",
+          "size": 48,
+          "color": "gold",
+          "y": 800
+        }
       ]
     },
     {
       "seconds": 14,
       "lines": [
-        { "text": "Fair Winds and Following Seas", "font": "georgiab.ttf", "size": 88, "color": "white", "y": 420 },
-        { "text": "With love and gratitude from your family and friends", "font": "georgiai.ttf", "size": 44, "color": "gold", "y": 560 }
+        {
+          "text": "Fair Winds and Following Seas",
+          "font": "georgiab.ttf",
+          "size": 88,
+          "color": "white",
+          "y": 420
+        },
+        {
+          "text": "With love and gratitude from your family and friends",
+          "font": "georgiai.ttf",
+          "size": 44,
+          "color": "gold",
+          "y": 560
+        }
       ]
     }
   ],
-
   "slideshowMusic": [
     "music/01_The_Army_Goes_Rolling_Along_US_Army_Band.mp3",
-    "music/02_Anchors_Aweigh_1993.oga",
+    "music/02_Anchors_Aweigh_US_Navy_Band.mp3",
+    { "file": "music/02b_Anchors_Aweigh_Navy_Band_Commodores_Jazz.webm", "start": 1.0, "end": 60.5 },
     "music/03_Eternal_Father_Navy_Hymn_US_Navy_Band.mp3"
   ],
   "closingMusic": "music/04_Anchors_Aweigh_Ceremonial_Band.mp3",
-
   "photoSections": [
     {
       "title": "Where It Began",
       "subtitle": "United States Army  ·  Enlisted March 2, 1988",
       "seal": "07_US_Army_Seal.jpg",
       "photos": [
-        { "file": "111_Ft_Campbell_Platoon_B_Co_76_Div_1988.jpg", "rotate": "ccw" },
-        "72_Training_Rifle_in_BDUs.jpg",
-        "74_Training_Rifle_BDUs_Wide_Shot.jpg"
+        {
+          "file": "111_Ft_Campbell_Platoon_B_Co_76_Div_1988.jpg",
+          "rotate": "ccw"
+        }
       ]
     },
     {
       "title": "Answering the Call Again",
       "subtitle": "United States Navy  ·  Commissioned April 9, 2005",
       "seal": "11_US_Navy_Seal.jpg",
+      "photos": [
+        "46_Dinner_Dress_White_Senior_Officer.jpg"
+      ]
+    },
+    {
+      "title": "A Lifetime in Pictures",
+      "subtitle": "Thirty-eight years of service, travel, friends and family",
       "photos": [
         "65_Official_Navy_Portrait.jpg",
         "44_Service_Dress_Blue_Portrait_Ribbons.jpg",
@@ -66,13 +119,7 @@
         "35_Cook_Rd_Street_Sign_on_Base.jpg",
         "40_NWU_Outdoor_Selfie_with_Trees.jpg",
         "118_NWU_Type_III_LCDR_Selfie.jpg",
-        "121_NWU_Selfie_NOSC_with_Goofy.jpg"
-      ]
-    },
-    {
-      "title": "Deployed",
-      "subtitle": "Djibouti, Bahrain and the Fifth Fleet",
-      "photos": [
+        "121_NWU_Selfie_NOSC_with_Goofy.jpg",
         "01_Camp_Lemonnier_Group_Photo.jpg",
         "05_US_Fifth_Fleet_Hat.jpg",
         "109_NAVCENT_Seal_Selfie.jpg",
@@ -98,13 +145,7 @@
         "08_Group_Dinner_with_Friends.jpg",
         "113_Bahrain_Rooftop_Group_Night_Out.jpg",
         "59_Navy_Ring_and_Cigar_at_Bar.jpg",
-        "97_Turban_Selfie_Souvenir_Shop.jpg"
-      ]
-    },
-    {
-      "title": "Around the World",
-      "subtitle": "Korea and Europe",
-      "photos": [
+        "97_Turban_Selfie_Souvenir_Shop.jpg",
         "13_Naval_Warfare_Mural_Selfie.jpg",
         "16_Join_the_Navy_Poster_at_Museum.jpg",
         "15_UN_Command_Korean_Armistice_Display.jpg",
@@ -120,13 +161,7 @@
         "50_Korean_Restaurant_in_NWU.jpg",
         "114_German_Beer_Garden_Selfie.jpg",
         "116_Trier_Cathedral_Selfie_with_Colleague.jpg",
-        "122_Porta_Nigra_Interior_Trier.jpg"
-      ]
-    },
-    {
-      "title": "Home and Family",
-      "subtitle": "The people who waited for every homecoming",
-      "photos": [
+        "122_Porta_Nigra_Interior_Trier.jpg",
         "41_Blue_Jackets_Hockey_Game_Navy_Polo.jpg",
         "119_King_Neptune_Statue_Virginia_Beach.jpg",
         "120_Selfie_with_Dog_Yellow_Bandana.jpg",
@@ -144,34 +179,77 @@
         "49_Formal_Event_with_Wife_and_Nieces.jpg",
         "69_Presidential_Gala.jpg",
         "64_With_Bagpiper_at_Formal_Event.jpg",
-        "46_Dinner_Dress_White_Senior_Officer.jpg",
         "12_Dress_Mess_Portrait.jpg",
         "70_Officer_Cover_Portrait_Waterfront.jpg"
       ]
     }
   ],
-
   "videoSections": [
     {
       "title": "Messages from Shipmates and Friends",
       "subtitle": "",
       "dir": ".",
       "videos": [
-        { "file": "Tom Sullivan.MOV", "caption": "Tom Sullivan" },
-        { "file": "Adrienne Wilhelm.mp4", "caption": "Adrienne Wilhelm" },
-        { "file": "Eric Chitwood.mp4", "caption": "Eric Chitwood" },
-        { "file": "Cathi Manfre.MP4", "caption": "Cathi Manfre" },
-        { "file": "Milton Williams.mov", "caption": "Milton Williams" },
-        { "file": "Tim Thulin.MOV", "caption": "Tim Thulin" },
-        { "file": "Lane and Chris Sullivan.MOV", "caption": "Lane and Chris Sullivan" },
-        { "file": "Yamadas.MP4", "caption": "The Yamadas" },
-        { "file": "Jon Espinoza.mp4", "caption": "Jon Espinoza" },
-        { "file": "Theo Rich.MOV", "caption": "Theo Rich" },
-        { "file": "Michael Sheehan.mp4", "caption": "Michael Sheehan" },
-        { "file": "Alan Oprsol.MP4", "caption": "Alan Oprsol" },
-        { "file": "Chris Thompson.MOV", "caption": "Chris Thompson" },
-        { "file": "Rope Burns.MOV", "caption": "Rope Burns" },
-        { "file": "Randy Reichenbach.MOV", "caption": "Randy Reichenbach" }
+        {
+          "file": "Tom Sullivan.MOV",
+          "caption": "Tom Sullivan"
+        },
+        {
+          "file": "Adrienne Wilhelm.mp4",
+          "caption": "Adrienne Wilhelm"
+        },
+        {
+          "file": "Eric Chitwood.mp4",
+          "caption": "Eric Chitwood"
+        },
+        {
+          "file": "Cathi Manfre.MP4",
+          "caption": "Cathi Manfre"
+        },
+        {
+          "file": "Milton Williams.mov",
+          "caption": "Milton Williams"
+        },
+        {
+          "file": "Tim Thulin.MOV",
+          "caption": "Tim Thulin"
+        },
+        {
+          "file": "Lane and Chris Sullivan.MOV",
+          "caption": "Lane and Chris Sullivan"
+        },
+        {
+          "file": "Yamadas.MP4",
+          "caption": "The Yamadas"
+        },
+        {
+          "file": "Jon Espinoza.mp4",
+          "caption": "Jon Espinoza"
+        },
+        {
+          "file": "Theo Rich.MOV",
+          "caption": "Theo Rich"
+        },
+        {
+          "file": "Michael Sheehan.mp4",
+          "caption": "Michael Sheehan"
+        },
+        {
+          "file": "Alan Oprsol.MP4",
+          "caption": "Alan Oprsol"
+        },
+        {
+          "file": "Chris Thompson.MOV",
+          "caption": "Chris Thompson"
+        },
+        {
+          "file": "Rope Burns.MOV",
+          "caption": "Rope Burns"
+        },
+        {
+          "file": "Randy Reichenbach.MOV",
+          "caption": "Randy Reichenbach"
+        }
       ]
     },
     {
@@ -179,16 +257,46 @@
       "subtitle": "",
       "dir": "Family Videos",
       "videos": [
-        { "file": "Rebecca Betancur.mov", "caption": "Rebecca Betancur" },
-        { "file": "Katlin Betancur.mov", "caption": "Katlin Betancur" },
-        { "file": "Adam Shepherd.mp4", "caption": "Adam Shepherd" },
-        { "file": "Cheryl Shephard.MOV", "caption": "Cheryl Shephard" },
-        { "file": "Uncle Bill.mp4", "caption": "Uncle Bill" },
-        { "file": "Brian and Sherry.mov", "caption": "Brian and Sherry" },
-        { "file": "Matt and Ana.mov", "caption": "Uncle Matt and Ana" },
-        { "file": "Marty and Kids.MOV", "caption": "Uncle Marty and the Kids" },
-        { "file": "Grammy.MOV", "caption": "Grammy" },
-        { "file": "Grampy.MOV", "caption": "Grampy" }
+        {
+          "file": "Rebecca Betancur.mov",
+          "caption": "Rebecca Betancur"
+        },
+        {
+          "file": "Katlin Betancur.mov",
+          "caption": "Katlin Betancur"
+        },
+        {
+          "file": "Adam Shepherd.mp4",
+          "caption": "Adam Shepherd"
+        },
+        {
+          "file": "Cheryl Shephard.MOV",
+          "caption": "Cheryl Shephard"
+        },
+        {
+          "file": "Uncle Bill.mp4",
+          "caption": "Uncle Bill"
+        },
+        {
+          "file": "Brian and Sherry.mov",
+          "caption": "Brian and Sherry"
+        },
+        {
+          "file": "Matt and Ana.mov",
+          "caption": "Uncle Matt and Ana"
+        },
+        {
+          "file": "Marty and Kids.MOV",
+          "caption": "Uncle Marty and the Kids"
+        },
+        {
+          "file": "Grammy.MOV",
+          "caption": "Grammy"
+        },
+        {
+          "file": "Grampy.MOV",
+          "caption": "Grampy"
+        }
       ]
     }
   ]
