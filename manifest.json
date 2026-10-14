@@ -81,9 +81,8 @@
   ],
   "slideshowMusic": [
     "music/01_The_Army_Goes_Rolling_Along_US_Army_Band.mp3",
-    "music/02_Anchors_Aweigh_US_Navy_Band.mp3",
-    { "file": "music/02b_Anchors_Aweigh_Navy_Band_Commodores_Jazz.webm", "start": 1.0, "end": 60.5 },
-    "music/03_Eternal_Father_Navy_Hymn_US_Navy_Band.mp3"
+    "music/02_Anchors_Aweigh_1993.oga",
+    "music/03_The_Stars_and_Stripes_Forever_US_Navy_Band.ogg"
   ],
   "closingMusic": "music/04_Anchors_Aweigh_Ceremonial_Band.mp3",
   "photoSections": [
