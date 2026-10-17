@@ -223,7 +223,7 @@ async function videoClip(dir, v, idx) {
     `[a]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},scale=192:108,gblur=sigma=6,scale=${W}:${H},eq=brightness=-0.2[bg];` +
     `[b]scale=${W}:${H}:force_original_aspect_ratio=decrease:force_divisible_by=2:flags=lanczos[fg];` +
     `[bg][fg]overlay=(W-w)/2:(H-h)/2,fps=${FPS},format=yuv420p,` +
-    `drawtext=fontfile=${fpath(FONTS + '/georgia.ttf')}:textfile=${fpath(tf)}:fontsize=46:fontcolor=white:box=1:boxcolor=${NAVY}@0.72:boxborderw=16:x=72:y=h-th-82:alpha='${alpha}',` +
+    (M.videoCaptions === false || !v.caption ? '' : `drawtext=fontfile=${fpath(FONTS + '/georgia.ttf')}:textfile=${fpath(tf)}:fontsize=46:fontcolor=white:box=1:boxcolor=${NAVY}@0.72:boxborderw=16:x=72:y=h-th-82:alpha='${alpha}',`) +
     `fade=t=in:st=0:d=0.5,fade=t=out:st=${(dur - 0.5).toFixed(3)}:d=0.5[v];` +
     `[0:a]loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,` +
     `afade=t=in:st=0:d=0.3,afade=t=out:st=${(dur - 0.5).toFixed(3)}:d=0.5[a]`;
@@ -347,7 +347,7 @@ async function buildClosing() {
   for (const sec of M.videoSections) {
     chapters.push({ title: sec.title, start: t, people: [] });
     t += sec._card.seconds;
-    for (const c of sec._clips) { chapters[chapters.length - 1].people.push({ name: c.caption, start: t }); t += c.seconds; }
+    for (const c of sec._clips) { if (M.videoCaptions !== false) chapters[chapters.length - 1].people.push({ name: c.caption, start: t }); t += c.seconds; }
   }
   chapters.push({ title: 'Thank You for Your Service', start: t });
   fs.writeFileSync(path.join(DOCS, 'chapters.json'), JSON.stringify({ duration: masterLen, honoree: M.honoree, chapters }, null, 2));

@@ -13,7 +13,7 @@
   },
   "closing": [
     {
-      "seconds": 22,
+      "seconds": 40,
       "lines": [
         {
           "text": "Thank You for Your Service",
@@ -80,11 +80,16 @@
     }
   ],
   "slideshowMusic": [
-    "music/01_The_Army_Goes_Rolling_Along_US_Army_Band.mp3",
-    "music/02_Anchors_Aweigh_1993.oga",
-    "music/03_The_Stars_and_Stripes_Forever_US_Navy_Band.ogg"
+    {
+      "file": "music/01 - Courtesy Of The Red, White And Blue (The Angry American).mp3"
+    },
+    {
+      "file": "music/02 - In The Navy (Single Version).mp3",
+      "start": 20,
+      "end": 185
+    }
   ],
-  "closingMusic": "music/04_Anchors_Aweigh_Ceremonial_Band.mp3",
+  "closingMusic": "music/01 - Celebration.mp3",
   "photoSections": [
     {
       "title": "Where It Began",
@@ -295,8 +300,17 @@
         {
           "file": "Grampy.MOV",
           "caption": "Grampy"
+        },
+        {
+          "file": "Me, Kayla, Kids.MOV",
+          "caption": "Kayla and the Kids"
+        },
+        {
+          "file": "Mom.Angie.MOV",
+          "caption": "Mom"
         }
       ]
     }
-  ]
+  ],
+  "videoCaptions": false
 }

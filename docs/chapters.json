@@ -1,5 +1,5 @@
 {
-  "duration": 2010.987,
+  "duration": 2029.920333,
   "honoree": "Michael Cook",
   "chapters": [
     {
@@ -8,119 +8,17 @@
     },
     {
       "title": "Messages from Shipmates and Friends",
-      "start": 420,
-      "people": [
-        {
-          "name": "Tom Sullivan",
-          "start": 424.5
-        },
-        {
-          "name": "Adrienne Wilhelm",
-          "start": 432.3
-        },
-        {
-          "name": "Eric Chitwood",
-          "start": 441
-        },
-        {
-          "name": "Cathi Manfre",
-          "start": 457.566667
-        },
-        {
-          "name": "Milton Williams",
-          "start": 482.2
-        },
-        {
-          "name": "Tim Thulin",
-          "start": 511.3
-        },
-        {
-          "name": "Lane and Chris Sullivan",
-          "start": 542.466667
-        },
-        {
-          "name": "The Yamadas",
-          "start": 580
-        },
-        {
-          "name": "Jon Espinoza",
-          "start": 619.933333
-        },
-        {
-          "name": "Theo Rich",
-          "start": 678.7323329999999
-        },
-        {
-          "name": "Michael Sheehan",
-          "start": 738.3989999999999
-        },
-        {
-          "name": "Alan Oprsol",
-          "start": 799.2989999999999
-        },
-        {
-          "name": "Chris Thompson",
-          "start": 874.4989999999999
-        },
-        {
-          "name": "Rope Burns",
-          "start": 970.4656669999999
-        },
-        {
-          "name": "Randy Reichenbach",
-          "start": 1117.532334
-        }
-      ]
+      "start": 357.5787759999997,
+      "people": []
     },
     {
       "title": "Messages from Family",
-      "start": 1321.499001,
-      "people": [
-        {
-          "name": "Rebecca Betancur",
-          "start": 1325.999001
-        },
-        {
-          "name": "Katlin Betancur",
-          "start": 1331.565668
-        },
-        {
-          "name": "Adam Shepherd",
-          "start": 1359.699001
-        },
-        {
-          "name": "Cheryl Shephard",
-          "start": 1373.9323339999999
-        },
-        {
-          "name": "Uncle Bill",
-          "start": 1493.6656669999998
-        },
-        {
-          "name": "Brian and Sherry",
-          "start": 1503.0989999999997
-        },
-        {
-          "name": "Uncle Matt and Ana",
-          "start": 1573.3989999999997
-        },
-        {
-          "name": "Uncle Marty and the Kids",
-          "start": 1612.7656669999997
-        },
-        {
-          "name": "Grammy",
-          "start": 1623.0656669999996
-        },
-        {
-          "name": "Grampy",
-          "start": 1745.3323339999997
-        }
-      ]
+      "start": 1259.0777769999995,
+      "people": []
     },
     {
       "title": "Thank You for Your Service",
-      "start": 1976.4656669999997
+      "start": 1977.3777759999991
     }
   ]
 }
